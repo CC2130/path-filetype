@@ -1,3 +1,4 @@
+/*!
 # Path FileType
 If you don't know chinese, the next may give you a chance to learn chinses.
 
@@ -50,3 +51,11 @@ assert_eq!(_dir.filetype().unwrap(), FileType::Directory);
     let _ = remove_file(_symlink_file);
 }
 ```
+*/
+#[cfg(unix)]
+pub mod unix;
+
+#[cfg(unix)]
+pub use unix::*;
+
+// TODO: Windows
